@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformControl : MonoBehaviour
 {
     private Vector2 lastPos;
+    private float rotationSpeed = 0.2f;
 
     void Update()
     {
@@ -20,7 +21,7 @@ public class PlatformControl : MonoBehaviour
             float delta = lastPos.x - currPos.x;
             lastPos = currPos;
 
-            transform.Rotate(Vector2.up * delta);
+            transform.Rotate(Vector2.up * delta * rotationSpeed);
         }
         if(Input.GetMouseButtonUp(0))
         {
