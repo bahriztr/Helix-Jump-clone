@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class BallController : MonoBehaviour
+public class BallController : Singleton<BallController>
 {
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float JumpEnd = 5f;

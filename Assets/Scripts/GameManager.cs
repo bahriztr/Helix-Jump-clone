@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    Transform player;
+    Transform ball;
+    [SerializeField] private Transform startPos;
     void Start()
     {
-        
+        ball = startPos;
     }
 
     // Update is called once per frame
