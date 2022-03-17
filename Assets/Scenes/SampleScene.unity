@@ -835,7 +835,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6360301788894081847, guid: 212ce76c65c41224ab825d4d20a9a6af, type: 3}
       propertyPath: jumpForce
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8447339183948889706, guid: 212ce76c65c41224ab825d4d20a9a6af, type: 3}
       propertyPath: m_Mass
@@ -863,7 +863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8447339183948889710, guid: 212ce76c65c41224ab825d4d20a9a6af, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5.46
       objectReference: {fileID: 0}
     - target: {fileID: 8447339183948889710, guid: 212ce76c65c41224ab825d4d20a9a6af, type: 3}
       propertyPath: m_LocalRotation.w

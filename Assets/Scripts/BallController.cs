@@ -6,31 +6,44 @@ using DG.Tweening;
 public class BallController : Singleton<BallController>
 {
     [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private float JumpEnd = 5f;
-    [SerializeField] private float JumpDuration = .25f;
+    [SerializeField] private float grav = 15f;
+    [SerializeField] private float scaleValue = 1.1f;
+    [SerializeField] private float jumpDuration = .5f;
     private Rigidbody rb;
 
 
-    private void Awake() 
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody>();    
+        rb = GetComponent<Rigidbody>();
     }
     void Start()
     {
-       // rb.DOJump(new Vector3(0f,JumpEnd,0f), jumpForce, 1, JumpDuration).SetEase
+
+    }
+
+    void Update()
+    {
+        Vector3 vel = rb.velocity;
+        vel.y -= grav * Time.deltaTime;
+        rb.velocity = vel;
     }
 
     public void Jump()
     {
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        rb.velocity = new Vector3(0, jumpForce, 0);
 
     }
-
-    private void OnCollisionEnter(Collision other) 
+    public void ShakeTheBall()
     {
-        if(other.collider.CompareTag("Platform"))
+        transform.DOShakeScale(jumpDuration, scaleValue);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Platform"))
         {
             Jump();
+            ShakeTheBall();
         }
     }
 

@@ -482,7 +482,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.5905e-41, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -510,7 +510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6360301788894081847, guid: 212ce76c65c41224ab825d4d20a9a6af, type: 3}
       propertyPath: jumpForce
-      value: 50
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8447339183948889706, guid: 212ce76c65c41224ab825d4d20a9a6af, type: 3}
       propertyPath: m_Mass
