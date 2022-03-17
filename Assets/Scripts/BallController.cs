@@ -17,7 +17,7 @@ public class BallController : MonoBehaviour
     }
     void Start()
     {
-        //rb.DOJump(new Vector3(0f,JumpEnd,0f), jumpForce, 1, JumpDuration)
+       // rb.DOJump(new Vector3(0f,JumpEnd,0f), jumpForce, 1, JumpDuration).SetEase
     }
 
     public void Jump()
