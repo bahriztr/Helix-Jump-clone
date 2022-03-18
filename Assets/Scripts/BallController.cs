@@ -11,7 +11,7 @@ public class BallController : Singleton<BallController>
     [SerializeField] private float jumpDuration = .5f;
     private Rigidbody rb;
 
-    public float lastHit;
+    public Vector3 lastHit;
 
 
     private void Awake()
@@ -20,7 +20,7 @@ public class BallController : Singleton<BallController>
     }
     void Start()
     {
-        lastHit = transform.position.y;
+        lastHit = transform.position;
     }
 
     void Update()
@@ -29,10 +29,7 @@ public class BallController : Singleton<BallController>
         vel.y -= grav * Time.deltaTime;
         rb.velocity = vel;
 
-        if(lastHit > transform.position.y)
-        {
-            lastHit = transform.position.y;
-        }
+
     }
 
     public void Jump()
@@ -50,8 +47,13 @@ public class BallController : Singleton<BallController>
         if (other.collider.CompareTag("Platform"))
         {
             Jump();
-            ShakeTheBall();
-        
+            //ShakeTheBall();
+
+            if (lastHit.y > transform.position.y)
+            {
+                lastHit = transform.position;
+            }
+
         }
     }
 

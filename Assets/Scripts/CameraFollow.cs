@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
+    public Transform target; // ball
     public Vector3 offset;
     public float smoothTime = 0.3f;
 
@@ -14,14 +14,19 @@ public class CameraFollow : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (transform.position.y > BallController.Instance.lastHit)
+        if (target.position.y < BallController.Instance.lastHit.y)
         {
             Vector3 targetPosition = target.position + offset;
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
         }
+
+
+        // Vector3 lastHit = BallController.Instance.lastHit;
+
+        // Vector3 targetPosition = new Vector3((int)lastHit.x, (int)lastHit.y, (int)lastHit.z) + offset;
+        // transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
 
     }
