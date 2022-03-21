@@ -32,18 +32,9 @@ public class Colors : Singleton<Colors>
     private Color32 whiteColumn = new Color32(255, 255, 255, 255);
     private Color32 yellowBall = new Color32(240, 238, 101, 94);
 
+    
 
-    private void Start()
-    {
-        RandomPaintAllMaterials();
-    }
-
-    private void Update()
-    {
-        
-    }
-
-    public void ColorsListFunction(GameObject go)
+    public void ColorsListFunction()
     {
         colorsOne.AddRange(new List<Color32>
         {
@@ -76,12 +67,32 @@ public class Colors : Singleton<Colors>
             colorsThree
         });
     }
-    public void RandomPaintAllMaterials()
+    public void RandomPaintAllMaterials(List<GameObject> objs)
     {
-        int index = Random.Range(0, 3);
+        int index = Random.Range(0, allColorsList.Count); // choosing the color
+        
+        
+        
+        foreach (GameObject obj in objs)
+        {
+            obj.GetComponent<Renderer>().material.color = allColorsList[index][0];
+            foreach (Transform child in obj.transform)
+            {
+                if (child.gameObject.CompareTag("Obstacle"))
+                {
+                    child.GetComponent<Renderer>().material.color = allColorsList[index][2];
+                }
+                else
+                {
+                    child.GetComponent<Renderer>().material.color = allColorsList[index][1];
+                }
+            }
+        }
+        
         column.GetComponent<Renderer>().material.color = allColorsList[index][0];
         ground.GetComponent<Renderer>().material.color = allColorsList[index][1];
         obstacle.GetComponent<Renderer>().material.color = allColorsList[index][2];
         ball.GetComponent<Renderer>().material.color = allColorsList[index][3];
+
     }
 }

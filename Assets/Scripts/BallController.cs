@@ -43,7 +43,7 @@ public class BallController : Singleton<BallController>
         if (other.collider.CompareTag("Platform"))
         {
             Jump();
-            //ShakeTheBall();
+            ShakeTheBall();
 
             if (lastHit.y > transform.position.y)
             {

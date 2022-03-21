@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4144444593574043146}
   - component: {fileID: 4144444593574043147}
   - component: {fileID: 4144444593574043140}
+  - component: {fileID: -6561307321808994077}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -112,6 +113,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854da8df5421f3e48b075be058fb845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6561307321808994077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4144444593574043141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afeb0660c214c0fa33ea68706bcc745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4144444592694893162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -185,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1f1bc57eef701fc48b62e76e42777abc, type: 3}
       propertyPath: m_TagString
-      value: Platform
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f1bc57eef701fc48b62e76e42777abc, type: 3}

@@ -21,17 +21,10 @@ public class GameManager : Singleton<GameManager>
     {
         ballTransform = startPos;
         InstantiateColumns();
-        foreach (var obj in objectsList)
-        {
-            // give colors
-        }
+        Colors.Instance.ColorsListFunction();
+        Colors.Instance.RandomPaintAllMaterials(objectsList);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        DestroyGround();
-    }
 
     public void InstantiateColumns()
     {
@@ -42,12 +35,5 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void DestroyGround()
-    {
-        if (ball.transform.position.y < ground.transform.position.y)
-        {
-            Destroy(ground);
-            passCount++;
-        }
-    }
+    
 }

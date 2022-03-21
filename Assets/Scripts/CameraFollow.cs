@@ -1,34 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine.Utility;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target; // ball
+    public Transform ball; // ball
     public Vector3 offset;
     public float smoothTime = 0.3f;
 
-    private Vector3 velocity = Vector3.zero;
+    public float positionOffset;
+    private Vector3 velocity;
     void Start()
     {
-        Vector3 targetPosition = target.position + offset;
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        offset = transform.position - ball.position;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (target.position.y < BallController.Instance.lastHit.y)
+        
+        Vector3 targetPos = ball.position + offset;
+
+        
+        if (ball.position.y < transform.position.y + positionOffset)
         {
-            Vector3 targetPosition = target.position + offset;
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+            transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
         }
-
-
-        // Vector3 lastHit = BallController.Instance.lastHit;
-
-        // Vector3 targetPosition = new Vector3((int)lastHit.x, (int)lastHit.y, (int)lastHit.z) + offset;
-        // transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-
-
     }
 }
