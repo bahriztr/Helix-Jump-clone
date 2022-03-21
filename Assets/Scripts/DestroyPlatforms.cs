@@ -19,7 +19,7 @@ using UnityEngine;
         
         public void DestroyPlatform()
         {
-            if (ball.transform.position.y < gameObject.transform.position.y)
+            if (ball.transform.position.y < gameObject.transform.position.y - .5f)
             {
                 Destroy(gameObject, .2f);
                 GameManager.Instance.passCount++;

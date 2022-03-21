@@ -127,6 +127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5
   grav: 15
-  scaleValue: 0.3
+  scaleValue: 0.1
   jumpDuration: 0.5
   lastHit: {x: 0, y: 0, z: 0}
