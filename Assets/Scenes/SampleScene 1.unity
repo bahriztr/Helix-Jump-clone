@@ -155,6 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columnPrefab: {fileID: 2050171706}
   startPos: {fileID: 1687258585}
+  canRotateScreen: 1
+  ground: {fileID: 2050171706}
+  ball: {fileID: 2122637108}
 --- !u!4 &463806108
 Transform:
   m_ObjectHideFlags: 0
@@ -167,7 +170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &463806109
 MonoBehaviour:
@@ -198,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4144444593574043144, guid: deec2870898dd324981f2c9135efa9b9, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4144444593574043144, guid: deec2870898dd324981f2c9135efa9b9, type: 3}
       propertyPath: m_LocalPosition.x

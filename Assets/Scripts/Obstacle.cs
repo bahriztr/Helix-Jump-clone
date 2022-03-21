@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
+        Time.timeScale = 0f;
+        GameManager.Instance.canRotateScreen = false;
     }
 }

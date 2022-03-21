@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 
 public class BallController : Singleton<BallController>
-{
+{ 
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float grav = 15f;
     [SerializeField] private float scaleValue = 1.1f;
@@ -12,7 +12,6 @@ public class BallController : Singleton<BallController>
     private Rigidbody rb;
 
     public Vector3 lastHit;
-
 
     private void Awake()
     {
@@ -28,14 +27,11 @@ public class BallController : Singleton<BallController>
         Vector3 vel = rb.velocity;
         vel.y -= grav * Time.deltaTime;
         rb.velocity = vel;
-
-
     }
 
     public void Jump()
     {
         rb.velocity = new Vector3(0, jumpForce, 0);
-
     }
     public void ShakeTheBall()
     {
@@ -52,6 +48,12 @@ public class BallController : Singleton<BallController>
             if (lastHit.y > transform.position.y)
             {
                 lastHit = transform.position;
+            }
+
+            if (GameManager.Instance.passCount == 3)
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Platform"));
+                GameManager.Instance.passCount = 0;
             }
 
         }
