@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 3375957680613529894}
   - component: {fileID: 7529696098121241495}
   - component: {fileID: 4473169147672898799}
+  - component: {fileID: 515927497518242765}
   m_Layer: 0
   m_Name: Cylinder.006
   m_TagString: Obstacle
@@ -384,6 +385,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -125435165217083709, guid: 62b01a6c2e0e69b4fb699d2e4fd621a6, type: 3}
+--- !u!114 &515927497518242765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985094288843905006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53e08180af62a4459f64f917aecee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5966553446172088528
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +505,7 @@ GameObject:
   - component: {fileID: 3694448889940043428}
   - component: {fileID: 1163012327791738350}
   - component: {fileID: 264815196006413902}
+  - component: {fileID: 1574228640451618741}
   m_Layer: 0
   m_Name: Cylinder.005
   m_TagString: Obstacle
@@ -576,6 +590,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3390558720134950976, guid: 62b01a6c2e0e69b4fb699d2e4fd621a6, type: 3}
+--- !u!114 &1574228640451618741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241984000382088665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53e08180af62a4459f64f917aecee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8930696031814359996
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +614,7 @@ GameObject:
   - component: {fileID: 6568022323506478917}
   - component: {fileID: 5798006021936175027}
   - component: {fileID: 4377919374660868591}
+  - component: {fileID: 7529545958511911107}
   m_Layer: 0
   m_Name: Cylinder.004
   m_TagString: Obstacle
@@ -672,6 +699,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6255687079079774844, guid: 62b01a6c2e0e69b4fb699d2e4fd621a6, type: 3}
+--- !u!114 &7529545958511911107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8930696031814359996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53e08180af62a4459f64f917aecee51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8971996961980940951
 GameObject:
   m_ObjectHideFlags: 0

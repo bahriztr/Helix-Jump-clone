@@ -6,7 +6,13 @@ public class Obstacle : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        Time.timeScale = 0f;
-        GameManager.Instance.canRotateScreen = false;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Time.timeScale = 0f;
+            GameManager.Instance.canRotateScreen = false;
+            
+            UIManager.Instance.Dead();
+        }
+
     }
 }
