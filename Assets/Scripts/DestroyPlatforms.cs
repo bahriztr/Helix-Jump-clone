@@ -28,7 +28,7 @@ using DG.Tweening;
             }
             if(GameManager.Instance.passCount == 0)
             {
-                ballColor.GetComponent<Renderer>().material.color = Colors.Instance.tempColor.GetComponent<Renderer>().material.color;
+                ballColor.GetComponent<Renderer>().material.color = Colors.Instance.ballFirsColor;
             }
         }
         

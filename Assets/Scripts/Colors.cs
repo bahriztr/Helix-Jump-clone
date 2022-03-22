@@ -11,7 +11,6 @@ public class Colors : Singleton<Colors>
     [SerializeField] private GameObject ground;
     [SerializeField] private GameObject obstacle;
     public GameObject ball;
-    public GameObject tempColor;
     [SerializeField] private GameObject finishPoint;
     
     private List<List<Color32>> allColorsList = new List<List<Color32>>();
@@ -33,6 +32,8 @@ public class Colors : Singleton<Colors>
     private Color32 blackGround = new Color32(0, 0, 0, 255);
     private Color32 whiteColumn = new Color32(255, 255, 255, 255);
     private Color32 yellowBall = new Color32(240, 238, 101, 94);
+
+    public Color32 ballFirsColor;
 
     
     public void ColorsListFunction()
@@ -91,9 +92,10 @@ public class Colors : Singleton<Colors>
         column.GetComponent<Renderer>().material.color = allColorsList[index][0];
         ground.GetComponent<Renderer>().material.color = allColorsList[index][1];
         obstacle.GetComponent<Renderer>().material.color = allColorsList[index][2];
-        ball.GetComponent<Renderer>().material.color = allColorsList[index][3];
-        tempColor.GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;
-        finishPoint.GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;
+        ballFirsColor = allColorsList[index][3];
+        ball.GetComponent<Renderer>().material.color = ballFirsColor;
+        //tempColor.GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;
+        //finishPoint.GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;
 
     }
 }
