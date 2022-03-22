@@ -44,18 +44,21 @@ public class BallController : Singleton<BallController>
         {
             Jump();
             ShakeTheBall();
-
+            
             if (lastHit.y > transform.position.y)
             {
                 lastHit = transform.position;
             }
 
             if (GameManager.Instance.passCount == 3)
-            {
-                Destroy(GameObject.FindGameObjectWithTag("Platform"));
+            {   
+                GameObject.FindGameObjectWithTag("Platform").SetActive(false);
                 GameManager.Instance.passCount = 0;
             }
-
+            else
+            {
+                GameManager.Instance.passCount = 0;
+            }
         }
     }
 
