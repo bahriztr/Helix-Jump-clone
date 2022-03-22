@@ -75,23 +75,25 @@ public class Colors : Singleton<Colors>
         
         foreach (GameObject obj in objs)
         {
-            obj.GetComponent<Renderer>().material.color = allColorsList[index][0];
             foreach (Transform child in obj.transform)
             {
+               
+
                 if (child.gameObject.CompareTag("Obstacle"))
                 {
                     child.GetComponent<Renderer>().material.color = allColorsList[index][2];
                 }
-                else
+                else if(child.gameObject.CompareTag("Platform"))
                 {
                     child.GetComponent<Renderer>().material.color = allColorsList[index][1];
+                }
+                else
+                {
+                    child.GetComponent<Renderer>().material.color = allColorsList[index][0];
                 }
             }
         }
         
-        column.GetComponent<Renderer>().material.color = allColorsList[index][0];
-        ground.GetComponent<Renderer>().material.color = allColorsList[index][1];
-        obstacle.GetComponent<Renderer>().material.color = allColorsList[index][2];
         ballFirsColor = allColorsList[index][3];
         ball.GetComponent<Renderer>().material.color = ballFirsColor;
         //tempColor.GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;

@@ -20,6 +20,8 @@ public class BallController : Singleton<BallController>
     void Start()
     {
         lastHit = transform.position;
+        //gameObject.GetComponent<Renderer>().material.DOColor(Color.red, .1f).Pause();
+
     }
 
     void Update()
@@ -27,6 +29,12 @@ public class BallController : Singleton<BallController>
         Vector3 vel = rb.velocity;
         vel.y -= grav * Time.deltaTime;
         rb.velocity = vel;
+
+        if (GameManager.Instance.passCount >= 1)
+        {
+            //gameObject.GetComponent<Renderer>().material.DOPlay();
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     public void Jump()
@@ -43,21 +51,37 @@ public class BallController : Singleton<BallController>
         if (other.collider.CompareTag("Platform"))
         {
             Jump();
-            ShakeTheBall();
+            //ShakeTheBall();
             
             if (lastHit.y > transform.position.y)
             {
                 lastHit = transform.position;
             }
 
-            if (GameManager.Instance.passCount == 3)
-            {   
-                GameObject.FindGameObjectWithTag("Platform").SetActive(false);
+            
+        }
+
+        if (other.collider.CompareTag("Platform") || other.collider.CompareTag("Obstacle"))
+        {
+            if (GameManager.Instance.passCount >= 3)
+            {
+                foreach (Transform child in other.gameObject.transform.parent.transform)
+                {
+                    if (child.gameObject.CompareTag("Obstacle")  || child.gameObject.CompareTag("Platform") )
+                    {
+                        child.gameObject.SetActive(false);
+                    }
+                }
                 GameManager.Instance.passCount = 0;
+                gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                
+     
             }
             else
             {
                 GameManager.Instance.passCount = 0;
+                gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
             }
         }
     }

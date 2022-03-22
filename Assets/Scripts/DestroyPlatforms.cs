@@ -10,6 +10,7 @@ using DG.Tweening;
         {
             ball = GameManager.Instance.ball;
             ballColor = Colors.Instance.ball;
+            
         }
 
 
@@ -22,16 +23,33 @@ using DG.Tweening;
         {
             if (ball.transform.position.y < gameObject.transform.position.y - .5f)
             {
-                ballColor.GetComponent<Renderer>().material.DOColor(Color.red, 1f);
-                UIManager.Instance.score++;
-                gameObject.SetActive(false);
+                
+                foreach (Transform child in gameObject.transform)
+                {
+                    if (child.gameObject.CompareTag("Obstacle")|| child.gameObject.CompareTag("Platform"))
+                    {
+                        child.gameObject.SetActive(false);
+                    }
+                }
                 GameManager.Instance.passCount++;
+                UIManager.Instance.score += 25;
+                gameObject.GetComponent<DestroyPlatforms>().enabled = false;
             }
-            if(GameManager.Instance.passCount == 0)
-            {
-                ballColor.GetComponent<Renderer>().material.color = Colors.Instance.ballFirsColor;
-            }
+            
+
+            //
         }
         
+        // void Score()
+        // {
+        //     if (ball.transform.position.y < gameObject.transform.position.y - .5f)
+        //     {
+        //         if (!gameObject.transform.GetChild(0).gameObject.activeInHierarchy)
+        //         {
+        //             GameManager.Instance.passCount++;
+        //             UIManager.Instance.score++;
+        //         }
+        //     }
+        // }
     }
     

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7641201301057118892}
   m_Layer: 0
   m_Name: Cylinder.003
-  m_TagString: Obstacle
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 2289823171714648079}
   m_Layer: 0
   m_Name: Cylinder.004
-  m_TagString: Platform
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
