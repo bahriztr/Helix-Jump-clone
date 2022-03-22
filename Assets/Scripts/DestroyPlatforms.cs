@@ -23,6 +23,7 @@ using DG.Tweening;
             if (ball.transform.position.y < gameObject.transform.position.y - .5f)
             {
                 ballColor.GetComponent<Renderer>().material.DOColor(Color.red, 1f);
+                UIManager.Instance.score++;
                 gameObject.SetActive(false);
                 GameManager.Instance.passCount++;
             }
