@@ -50,19 +50,17 @@ public class BallController : Singleton<BallController>
     {
         if (other.collider.CompareTag("LastPlatform"))
         {
-            //Win()
+            Time.timeScale = 0f;
+            UIManager.Instance.WinGame();
         }
         if (other.collider.CompareTag("Platform"))
         {
             Jump();
             //ShakeTheBall();
-            
             if (lastHit.y > transform.position.y)
             {
                 lastHit = transform.position;
             }
-
-            
         }
 
         if (other.collider.CompareTag("Platform") || other.collider.CompareTag("Obstacle"))

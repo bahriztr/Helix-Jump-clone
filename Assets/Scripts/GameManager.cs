@@ -22,9 +22,6 @@ public class GameManager : Singleton<GameManager>
         //Colors.Instance.RandomPaintAllMaterials(objectsList);
     }
 
-    public void WinGame()
-    {
-        
-    }
+    
     
 }
