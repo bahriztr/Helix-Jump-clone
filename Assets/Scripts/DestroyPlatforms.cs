@@ -31,7 +31,6 @@ using DG.Tweening;
                         child.gameObject.SetActive(false);
                     }
                 }
-                GameManager.Instance.passCount++;
                 UIManager.Instance.score += 25;
                 gameObject.GetComponent<DestroyPlatforms>().enabled = false;
             }

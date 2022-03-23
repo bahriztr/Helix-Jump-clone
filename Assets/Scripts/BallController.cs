@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -65,6 +66,7 @@ public class BallController : Singleton<BallController>
 
         if (other.collider.CompareTag("Platform") || other.collider.CompareTag("Obstacle"))
         {
+
             if (other.collider.CompareTag("Obstacle"))
             {
                 if (GameManager.Instance.passCount < 2)
@@ -74,7 +76,6 @@ public class BallController : Singleton<BallController>
             
                     UIManager.Instance.Dead();
                 }
-
             }
             
             
@@ -82,15 +83,14 @@ public class BallController : Singleton<BallController>
             {
                 foreach (Transform child in other.gameObject.transform.parent.transform)
                 {
-                    if (child.gameObject.CompareTag("Obstacle")  || child.gameObject.CompareTag("Platform") )
+                    if (child.gameObject.CompareTag("Obstacle")  || child.gameObject.CompareTag("Platform"))
                     {
                         child.gameObject.SetActive(false);
                     }
                 }
-                GameManager.Instance.passCount = 0;
+                
                 gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 Jump();
-     
             }
             else
             {
@@ -98,8 +98,15 @@ public class BallController : Singleton<BallController>
                 gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
             }
+            GameManager.Instance.passCount = 0;
         }
     }
 
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Empty"))
+        {
+            GameManager.Instance.passCount++;
+        }
+    }
 }

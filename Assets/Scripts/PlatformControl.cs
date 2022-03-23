@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlatformControl : MonoBehaviour
 {
     private Vector2 lastPos;
-    private float rotationSpeed = 0.2f;
+    public float rotationSpeed = 0.2f;
 
     private void Start()
     {
