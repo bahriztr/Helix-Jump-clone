@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 116130087}
   - component: {fileID: 116130086}
   m_Layer: 5
-  m_Name: PlayAgainButton
+  m_Name: Next Level Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 367166477}
   - component: {fileID: 367166476}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Next Level Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,6 +416,7 @@ MonoBehaviour:
   scoreText: {fileID: 1084827457}
   score: 0
   lostPanel: {fileID: 468669021}
+  winPanel: {fileID: 1277663809}
 --- !u!224 &463806111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1035,6 +1036,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 463806110}
+    - target: {fileID: 8194131043480203455, guid: b5949825c4401b64c85b487d694b9d23, type: 3}
+      propertyPath: m_Name
+      value: Play Again Button
+      objectReference: {fileID: 0}
     - target: {fileID: 8194131044727094960, guid: b5949825c4401b64c85b487d694b9d23, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1122,6 +1127,14 @@ PrefabInstance:
     - target: {fileID: 8194131044727094964, guid: b5949825c4401b64c85b487d694b9d23, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194131044840990209, guid: b5949825c4401b64c85b487d694b9d23, type: 3}
+      propertyPath: m_Name
+      value: Play Again Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194131044868274562, guid: b5949825c4401b64c85b487d694b9d23, type: 3}
+      propertyPath: m_Name
+      value: Lose Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5949825c4401b64c85b487d694b9d23, type: 3}
