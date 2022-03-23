@@ -11,7 +11,7 @@ public class HelixManager : Singleton<HelixManager>
     private float ringsDistance = 5f;
     private int numberOfRings;
     public List<GameObject> objectsList = new List<GameObject>();
-
+    public GameObject lastPlatform;
 
     private void Start()
     {
@@ -19,6 +19,12 @@ public class HelixManager : Singleton<HelixManager>
         for (int i = 0; i < numberOfRings; i++)
         {
             SpawnRing(Random.Range(0, helixRings.Length));
+            if (i == numberOfRings - 1)
+            {   
+                // last platform
+                GameObject last = Instantiate(lastPlatform, new Vector3(objectsList[i].transform.position.x, objectsList[i].transform.position.y - 5, objectsList[i].transform.position.z), quaternion.identity);
+                objectsList.Add(last);
+            }
         }
         Colors.Instance.ColorsListFunction();
         Colors.Instance.RandomPaintAllMaterials(objectsList);
@@ -31,7 +37,6 @@ public class HelixManager : Singleton<HelixManager>
         ySpawn -= ringsDistance;
         
         objectsList.Add(go);
-        
-        
+
     }
 }

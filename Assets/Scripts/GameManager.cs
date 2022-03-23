@@ -12,6 +12,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject ground;
     public GameObject ball;
     public int passCount;
+    public GameObject winPanel;
 
 
     void Start()
@@ -19,6 +20,11 @@ public class GameManager : Singleton<GameManager>
         ballTransform = startPos;
         // Colors.Instance.ColorsListFunction();
         //Colors.Instance.RandomPaintAllMaterials(objectsList);
+    }
+
+    public void WinGame()
+    {
+        
     }
     
 }

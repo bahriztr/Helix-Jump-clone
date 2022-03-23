@@ -98,6 +98,7 @@ public class Colors : Singleton<Colors>
         ball.GetComponent<Renderer>().material.color = ballFirsColor;
         //tempColor.GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;
         //finishPoint.GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;
-
+        objs[objs.Count-1].transform.GetChild(1).GetComponent<Renderer>().material.color = allColorsList[index][0];
+        objs[objs.Count-1].transform.GetChild(0).GetComponent<Renderer>().material.color = ball.GetComponent<Renderer>().material.color;
     }
 }

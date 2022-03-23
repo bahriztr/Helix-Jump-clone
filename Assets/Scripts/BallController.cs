@@ -48,6 +48,10 @@ public class BallController : Singleton<BallController>
 
     private void OnCollisionEnter(Collision other)
     {
+        if (other.collider.CompareTag("LastPlatform"))
+        {
+            //Win()
+        }
         if (other.collider.CompareTag("Platform"))
         {
             Jump();
@@ -63,7 +67,20 @@ public class BallController : Singleton<BallController>
 
         if (other.collider.CompareTag("Platform") || other.collider.CompareTag("Obstacle"))
         {
-            if (GameManager.Instance.passCount >= 3)
+            if (other.collider.CompareTag("Obstacle"))
+            {
+                if (GameManager.Instance.passCount < 2)
+                {
+                    Time.timeScale = 0f;
+                    GameManager.Instance.canRotateScreen = false;
+            
+                    UIManager.Instance.Dead();
+                }
+
+            }
+            
+            
+            if (GameManager.Instance.passCount >= 2) 
             {
                 foreach (Transform child in other.gameObject.transform.parent.transform)
                 {
@@ -74,7 +91,7 @@ public class BallController : Singleton<BallController>
                 }
                 GameManager.Instance.passCount = 0;
                 gameObject.transform.GetChild(0).gameObject.SetActive(false);
-                
+                Jump();
      
             }
             else
