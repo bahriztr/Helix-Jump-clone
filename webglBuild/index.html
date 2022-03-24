@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=600 height=960></canvas>
+      <canvas id="unity-canvas" width=360 height=640></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -58,9 +58,9 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/webglBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/webglBuild.data",
-        frameworkUrl: buildUrl + "/webglBuild.framework.js",
-        codeUrl: buildUrl + "/webglBuild.wasm",
+        dataUrl: buildUrl + "/webglBuild.data.gz",
+        frameworkUrl: buildUrl + "/webglBuild.framework.js.gz",
+        codeUrl: buildUrl + "/webglBuild.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Helix-Jump-clone",
@@ -82,8 +82,8 @@
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        canvas.style.width = "600px";
-        canvas.style.height = "960px";
+        canvas.style.width = "360px";
+        canvas.style.height = "640px";
       }
       loadingBar.style.display = "block";
 
