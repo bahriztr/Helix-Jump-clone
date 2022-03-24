@@ -12,7 +12,7 @@ public class BallController : Singleton<BallController>
     [SerializeField] private float jumpDuration = .5f;
     private Rigidbody rb;
 
-    public Vector3 lastHit;
+    //public Vector3 lastHit;
 
     private void Awake()
     {
@@ -20,7 +20,7 @@ public class BallController : Singleton<BallController>
     }
     void Start()
     {
-        lastHit = transform.position;
+        //lastHit = transform.position;
         //gameObject.GetComponent<Renderer>().material.DOColor(Color.red, .1f).Pause();
 
     }
@@ -49,25 +49,15 @@ public class BallController : Singleton<BallController>
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("LastPlatform"))
+        if (other.collider.CompareTag("LastPlatform")) // win
         {
             Time.timeScale = 0f;
             UIManager.Instance.WinGame();
         }
-        if (other.collider.CompareTag("Platform"))
-        {
-            Jump();
-            //ShakeTheBall();
-            if (lastHit.y > transform.position.y)
-            {
-                lastHit = transform.position;
-            }
-        }
-
         if (other.collider.CompareTag("Platform") || other.collider.CompareTag("Obstacle"))
         {
 
-            if (other.collider.CompareTag("Obstacle"))
+            if (other.collider.CompareTag("Obstacle")) // die
             {
                 if (GameManager.Instance.passCount < 2)
                 {
@@ -100,6 +90,19 @@ public class BallController : Singleton<BallController>
             }
             GameManager.Instance.passCount = 0;
         }
+        if (other.collider.CompareTag("Platform"))
+        {
+            Jump();
+            //ShakeTheBall();
+            // if (lastHit.y > transform.position.y)
+            // {
+            //     lastHit = transform.position;
+            // }
+            GameManager.Instance.passCount = 0;
+
+        }
+
+       
     }
 
     private void OnTriggerExit(Collider other)
