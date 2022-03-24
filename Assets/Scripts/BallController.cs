@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class BallController : Singleton<BallController>
+public class BallController : CmosMechanicsBase<BallController>
 { 
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float grav = 15f;
